@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patients</h2>
+<a class="btn btn-sm btn-primary mb-2" href="{{ url_for('patient.add_patient') }}">Add Patient</a>
+<table class="table table-striped">
+  <thead><tr><th>ID</th><th>Name</th><th>Phone</th><th>Gender</th></tr></thead>
+  <tbody>
+    {% for p in patients %}
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.phone }}</td>
+      <td>{{ p.gender }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

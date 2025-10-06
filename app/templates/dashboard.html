@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Role: {{ current_user.role }}</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card p-3 mb-3">
+      <h5>Quick Actions</h5>
+      <p><a href="{{ url_for('patient.add_patient') }}" class="btn btn-sm btn-outline-primary">Add Patient</a></p>
+      <p><a href="{{ url_for('doctor.add_doctor') }}" class="btn btn-sm btn-outline-primary">Add Doctor</a></p>
+      <p><a href="{{ url_for('appointment.book_appointment') }}" class="btn btn-sm btn-outline-primary">Book Appointment</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
